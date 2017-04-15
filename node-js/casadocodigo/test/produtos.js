@@ -19,6 +19,7 @@ describe('#ProdutosController', function() {
         request.post('/produtos')
         .set('Accept', 'application/json')
         .send({titulo:"", descricao:""})
+        .expect('content-type',/json/)
         .expect(400, done);
     });
 
@@ -28,4 +29,16 @@ describe('#ProdutosController', function() {
         .send({titulo:"Livro de teste", descricao:"Livro de teste de inserção", preco:20.60})
         .expect(302, done);
     });
+
+    it("#Cadastro de produtos inválidos via html", function(done) {
+        request.post('/produtos')
+        .send({titulo:"", descricao:""})
+        .expect(400, done);
+    })
+
+    it("#Cadastro de produtos válidos via html", function(done) {
+        request.post('/produtos')
+        .send({titulo:"Livro de teste", descricao:"Livro de teste de inserção", preco:20.60})
+        .expect(302, done);
+    })
 });
