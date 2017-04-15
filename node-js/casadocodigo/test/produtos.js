@@ -14,4 +14,18 @@ describe('#ProdutosController', function() {
         .set('Accept', 'text/html')
         .expect(200, done);
     });
+
+    it("#Cadastro de produtos inválidos via json", function(done) {
+        request.post('/produtos')
+        .set('Accept', 'application/json')
+        .send({titulo:"", descricao:""})
+        .expect(400, done);
+    });
+
+    it("#Cadastro de produtos válidos via json", function(done) {
+        request.post('/produtos')
+        .set('Accept', 'application/json')
+        .send({titulo:"Livro de teste", descricao:"Livro de teste de inserção", preco:20.60})
+        .expect(302, done);
+    });
 });
