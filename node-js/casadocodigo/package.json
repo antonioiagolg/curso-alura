@@ -4,7 +4,7 @@
   "description": "site da casa do codigo",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "set NODE_ENV=test&& mocha"
   },
   "author": "alberto",
   "license": "ISC",
