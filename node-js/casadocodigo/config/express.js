@@ -19,5 +19,18 @@ module.exports = function() {
         .then('infra')
         .into(app);
 
+    app.use(function(req, res, next) {
+        res.status(404).render('erros/404.ejs');
+        next();
+    });
+
+    app.use(function(erros, req, res, next) {
+        if(process.env.NODE_ENV == 'production') {
+            res.status(500).render('erros/500.ejs');
+            return;
+        }
+        
+        next(erros);
+    });
     return app;
 }
