@@ -1,0 +1,14 @@
+db:
+  image: mysql
+  environment:
+    - MYSQL_ROOT_PASSWORD=test123
+  volumes:
+    - ~/Documents/curso-alura/docker/ubuntu-apache-docker/database:/var/lib/mysql
+blog:
+  image: wordpress
+  links:
+    - db:mysql
+  environment:
+    - WORDPRESS_DB_PASSWORD=test123
+  ports:
+    - 80:80
