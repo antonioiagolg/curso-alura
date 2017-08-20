@@ -4,11 +4,17 @@ class NegociacaoController {
         this._inputData = $("#data");
         this._inputQuantidade = $("#quantidade");
         this._inputValor = $("#valor");
-        this._listaNegociacoes = new ListaNegociacoes();
-        this._negociacoesView = new NegociacoesView($("#tabela-negociacoes"));
-        this._negociacoesView.update(this._listaNegociacoes.negociacoes);
-        this._mensagem = new Mensagem();
-        this._mensagemView = new MensagemView($("#mensagem-view"));
+
+        this._listaNegociacoes = new Bind(new ListaNegociacoes(),
+                                            new NegociacoesView($("#tabela-negociacoes")),
+                                            "adiciona",
+                                            "esvazia");
+
+        this._mensagem = new Bind(new Mensagem(),
+                                    new MensagemView($("#mensagem-view")),
+                                    "texto");
+
+        this._negociacaoService = new NegociacaoService();
     }
 
     adiciona(event) {
@@ -16,15 +22,32 @@ class NegociacaoController {
         event.preventDefault();
         this._listaNegociacoes.adiciona(this._criaNegociacao());
         this._mensagem.texto = "Negociação adicionada com sucesso.";
-        this._mensagemView.update(this._mensagem);
-        this._negociacoesView.update(this._listaNegociacoes.negociacoes);
-
         this._limpaFormulario();
+    }
+
+    importaNegociacoes() {
+        this._negociacaoService.obterNegociacoesDaSemana((erro, negociacoes) => {
+            if(erro) {
+                this._mensagem.texto = erro;
+                return;
+            }
+
+            negociacoes.forEach(negociacao => {
+                this._listaNegociacoes.adiciona(negociacao);
+                this._mensagem.texto = "Negociações importadas com sucesso!";
+            });
+        });
     }
 
     _criaNegociacao() {
         let data = DataHelper.textoParaData(this._inputData.value);
         return new Negociacao(data, this._inputQuantidade.value, this._inputValor.value);
+    }
+
+    apaga() {
+
+        this._listaNegociacoes.esvazia();
+        this._mensagem.texto = "Negociações apagadas com sucesso.";
     }
 
     _limpaFormulario() {
