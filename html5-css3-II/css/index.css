@@ -27,7 +27,7 @@ header.titulo-principal h1 {
 }
 .saudacao strong {
     color: #000;
-    font-size: 2rem;
+    font-size: 3rem;
 }
 .saudacao em {
     color: #851944;
@@ -53,10 +53,14 @@ header.titulo-principal h1 {
 }
 .trabalhos h2 {
     color: #FFF;
+    margin: 1em 1ch 1em;
+    font-size: 3rem;
+
 }
 .trabalhos ul {
     overflow: hidden;
     border: 10px solid black;
+    margin: 0 3ch;
 }
 .trabalhos li {
     float: left;
@@ -85,4 +89,17 @@ main {
     width: 100%;
     padding-bottom: 0;
     float: none;
+}
+
+.titulo-blog {
+    padding: 1em 1ch 0em;
+    font-size: 3rem;
+}
+
+.subtitulo-blog {
+    margin: 1.5rem;
+}
+
+.item-lista-blog {
+    margin: 1rem 3rem;
 }
