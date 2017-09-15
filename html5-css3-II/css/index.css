@@ -103,3 +103,12 @@ main {
 .item-lista-blog {
     margin: 1rem 3rem;
 }
+
+.titulo-rodape {
+    font-size: 3rem;
+    padding: 1em 1ch 0;
+}
+
+.descricao-rodape {
+    padding: 0 0 2rem 3ch;
+}
