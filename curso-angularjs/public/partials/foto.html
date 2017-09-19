@@ -1,7 +1,7 @@
 <div class="page-header text-center">
         <h1>{{foto.titulo}}</h1>
     </div>
-    
+    <p class="alert alert-info" ng-show="mensagem.length">{{mensagem}}</p>
     <form novalidate name="formulario" class="row" ng-submit="submeter()">
         <div class="col-md-6">
             <div class="form-group">
