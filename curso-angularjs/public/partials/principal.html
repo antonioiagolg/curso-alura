@@ -5,11 +5,16 @@
 <div class="row">
     <div class="col-md-12">
         <form>
-            <input type="search"
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <a href="/foto/new" class="btn btn-primary">Nova foto</a>
+                </span>
+                <input type="search"
                 class="form-control"
                 ng-model="filtro"
                 ng-model-options="{debounce: 500}"
                 placeholder="Pesquise aqui"/>
+            </div>
         </form>
     </div> <!-- fim col-md-12 -->
 </div> <!-- fim row -->
