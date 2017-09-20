@@ -14,7 +14,7 @@ api.adiciona = function(req, res) {
 api.busca = function(req, res) {
    db.findOne({_id: req.params.fotoId }, function(err, doc) {
         if (err) return console.log(err);
-        res.json(doc);
+        res.json([doc]);
     });
 };
 

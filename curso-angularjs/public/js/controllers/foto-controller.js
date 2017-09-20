@@ -1,14 +1,13 @@
-angular.module('alurapic').controller('FotoController', function($scope, $http, $routeParams){
+angular.module('alurapic').controller('FotoController', function($scope, recursoFoto, $routeParams){
 
     $scope.foto = {};
     $scope.mensagem = '';
     var fotoId = $routeParams.fotoId;
 
     if(fotoId) {
-        $http.get('/v1/fotos/' + fotoId)
-        .then(function(response) {
-            $scope.foto = response.data;
-        }, function(erro){
+        recursoFoto.query({fotoId: fotoId}, function(response){
+            $scope.foto = response[0];
+        }, function(erro) {
             $scope.mensagem = 'Não foi possível obter a foto para edição.';
         });
     }
@@ -17,21 +16,18 @@ angular.module('alurapic').controller('FotoController', function($scope, $http, 
         if($scope.formulario.$valid) {
 
             if(fotoId) {
-                $http.put('/v1/fotos/' + fotoId, $scope.foto)
-                .then(function(response) {
+                recursoFoto.update({fotoId: fotoId}, $scope.foto, function(response){
                     $scope.mensagem = 'Foto alterada com sucesso!';
                 }, function(erro) {
                     $scope.mensagem = 'Ocorreu um erro ao alterar a foto!';
                 });
             } else {
-                $http.post('/v1/fotos', $scope.foto)
-                .then(function() {
+                recursoFoto.save($scope.foto, function() {
                     $scope.mensagem = 'Imagem incluida com sucesso!';
                     $scope.foto = {};
                     $scope.formulario.$setPristine();
-                }, function(erro) {
+                }, function() {
                     $scope.mensagem = 'Houve um problema ao incluir a imagem!';
-                    console.log(erro);
                 });
             }
         }
