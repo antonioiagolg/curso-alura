@@ -22,4 +22,15 @@ angular.module('minhasDiretivas',[])
         };
 
         return ddo;
+    })
+    .directive('meuBotaoPerigo', () => {
+        let ddo = {};
+
+        ddo.estrict = "E";
+        ddo.scope = {
+            acao: '&',
+            nome: '@'
+        };
+        ddo.template = `<button type="button" ng-click="acao()" class="btn btn-danger btn-block">{{nome}}</button>`;
+        return ddo;
     });

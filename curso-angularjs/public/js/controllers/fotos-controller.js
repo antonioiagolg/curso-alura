@@ -18,7 +18,7 @@ angular.module('alurapic').controller('FotosController', function($scope, $http)
 		.then(function() {
 			$scope.mensagem = 'Foto ' + foto.titulo + ' removida com sucesso!';
 			var indexFoto = $scope.fotos.indexOf(foto);
-			$scope.fotos.splice(foto, 1);
+			$scope.fotos.splice(indexFoto, 1);
 		}, function(erro) {
 			$scope.mensagem = 'Houve um problema ao remover a foto!';
 		});
