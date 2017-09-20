@@ -5,10 +5,10 @@ class DataHelper {
     }
 
     static textoParaData(texto) {
-        if(!/^\d{4}-\d{2}-\d{2}$/.test(texto)) {
-            throw new Error("Formato válido é : aaaa-mm-dd");
+        if(!/^\d{2}\/\d{2}\/\d{4}$/.test(texto)) {
+            throw new Error("Formato válido é : dd/mm/aaaa");
         }
-        return new Date(...texto.split('-').map(
+        return new Date(...texto.split('/').reverse().map(
             (item, index) => {return item - index % 2;}
         ));
     }
