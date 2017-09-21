@@ -33,4 +33,16 @@ angular.module('minhasDiretivas',[])
         };
         ddo.template = `<button type="button" ng-click="acao()" class="btn btn-danger btn-block">{{nome}}</button>`;
         return ddo;
+    })
+    .directive('meuFocus', () => {
+        let ddo = {};
+
+        ddo.estrict = "A";
+
+        ddo.link = function(scope, element) {
+            scope.$on('fotoCadastrada', function(){
+                element[0].focus();
+            });
+        }
+        return ddo;
     });
