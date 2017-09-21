@@ -27,6 +27,7 @@ angular.module('meusServicos',['ngResource'])
                 });
             } else {
                 recursoFoto.save(foto, function(response) {
+                    
                     $rootScope.$broadcast(eventoCadastro);
                     resolve({
                         mensagem: 'Foto ' + foto.titulo + ' cadastrada com sucesso!',
