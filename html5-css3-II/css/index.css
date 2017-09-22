@@ -10,6 +10,14 @@
     padding: 1em;
 }
 
+.blog .mais-recente {
+    background-color: white;
+}
+
+.blog li {
+    width: 40%;
+}
+
 .palavra-home {
     font-family: 'Shadows Into Light', cursive;
     font-weight: bold;
@@ -35,6 +43,7 @@
 
 .foto-home {
     height: 200px;
+    border-radius: 10% 50% / 50% 10%;
 }
 
 .css3 {
