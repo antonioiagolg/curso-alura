@@ -1,3 +1,8 @@
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
 .sites-maravilhosos {
     -webkit-transform: skew(-20deg);
     transform: rotate(-5deg) skew(-10deg);
@@ -48,6 +53,10 @@
 
 .blog li {
     width: 40%;
+}
+
+.palavras-home, .titulo-principal {
+    transform-style: preserve-3d;
 }
 
 .palavra-home {
