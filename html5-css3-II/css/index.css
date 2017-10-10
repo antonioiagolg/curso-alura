@@ -45,6 +45,7 @@
     font-size: 3em;
     text-transform: uppercase;
     margin-bottom: .5em;
+    text-shadow: 2px 2px #000;
 }
 .trabalhos {
     background-color: #3C1D3D;
@@ -131,62 +132,73 @@ body {
     left: 60%;
     -webkit-transform: translate(-50%, -50%) translateZ(4px) rotate(-5deg) scale(.25);
             transform: translate(-50%, -50%) translateZ(4px) rotate(-5deg) scale(.25);
+    opacity: .3;
 }
 .boas-praticas {
     top: 70%;
     left: 20%;
     -webkit-transform: translate(-50%, -50%) translateZ(1px) rotate(10deg) scale(.25);
             transform: translate(-50%, -50%) translateZ(1px) rotate(10deg) scale(.25);
+    opacity: .3;
 }
 .codigo-limpo {
     top: 45%;
     left: 25%;
     -webkit-transform: translate(-50%, -50%) translateZ(2px) rotate(-10deg) scale(.25);
             transform: translate(-50%, -50%) translateZ(2px) rotate(-10deg) scale(.25);
+    opacity: .6;
 }
 .css3 {
     top: 55%;
     left: 35%;
     -webkit-transform: translate(-50%, -50%) translateZ(2px) rotate(5deg) scale(.25);
             transform: translate(-50%, -50%) translateZ(2px) rotate(5deg) scale(.25);
+    opacity: .6;
 }
 .html5 {
     top: 30%;
     left: 65%;
     -webkit-transform: translate(-50%, -50%) translateZ(2px) rotate(10deg) scale(.25);
             transform: translate(-50%, -50%) translateZ(2px) rotate(10deg) scale(.25);
+    opacity: .6;
 }
 .javascript {
+    opacity: 0.3;
     top: 15%;
     left: 60%;
     -webkit-transform: translate(-50%, -50%) translateZ(1px) rotate(-5deg) scale(.25);
             transform: translate(-50%, -50%) translateZ(1px) rotate(-5deg) scale(.25);
 }
 .acessibilidade {
+    opacity: 0.8;
     top: 30%;
     left: 35%;
     -webkit-transform: translate(-50%, -50%) translateZ(3px) rotate(-5deg) scale(.25);
             transform: translate(-50%, -50%) translateZ(3px) rotate(-5deg) scale(.25);
 }
 .responsivo {
+    opacity: .8;
     top: 40%;
     left: 40%;
     -webkit-transform: translate(-50%, -50%) translateZ(3px) rotate(10deg) scale(.25);
             transform: translate(-50%, -50%) translateZ(3px) rotate(10deg) scale(.25);
 }
 .otimizacoes {
+    opacity: .6;
     top: 70%;
     left: 65%;
     -webkit-transform: translate(-50%, -50%) translateZ(2px) rotate(-5deg) scale(.25);
             transform: translate(-50%, -50%) translateZ(2px) rotate(-5deg) scale(.25);
 }
 .agilidade {
+    opacity: 0.3;
     top: 75%;
     left: 35%;
     -webkit-transform: translate(-50%, -50%) translateZ(1px) rotate(5deg) scale(.25);
             transform: translate(-50%, -50%) translateZ(1px) rotate(5deg) scale(.25);
 }
 .design {
+    opacity: .6;
     top: 40%;
     left: 60%;
     -webkit-transform: translate(-50%, -50%) translateZ(2px) rotate(10deg) scale(.25);
