@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="js/app/models/Negociacao.js"></script>
+    <script>
+        var connection;
+        // Abrindo a conexão com o banco
+        //
+        var openRequest = window.indexedDB.open('aluraframe', 1);
+
+        // Tríade que deve ser tratada no indexedDB
+        //
+        openRequest.onupgradeneeded = e => {
+
+            console.log("Cria ou altera um banco já existente");
+            // Cria um object store, uma entidade que guarda coleções de objetos, como uma tabela
+            //
+            let minhaConnection = e.target.result;
+            minhaConnection.createObjectStore('negociacoes');
+        };
+
+        openRequest.onsuccess = e => {
+            console.log("Conexão obtida com sucesso");
+            connection = e.target.result;
+        };
+
+        openRequest.onerror = e => {
+            console.log(e.target.error);
+        };
+
+        // Adiciona uma negociação no banco
+        function adiciona() {
+            // Para salvar uma negociação no banco, precisamos de uma transação de uma object store
+            //
+            let transaction = connection.transaction(['negociacoes'], 'readwrite');
+
+            // Obtendo uma store com transação
+            //
+            let store = transaction.objectStore('negociacoes');
+
+            // Agora podemos adicionar dentro de uma store
+            //
+            let negociacao = new Negociacao(new Date(), 1, 200);
+            let request = store.add(negociacao);
+
+            // Ele não salva diretamente. Apenas fazemos uma requisição para salvar
+            // o dado. Vamos tratar os evento que ocorrem durante o save
+            //
+            request.onsuccess = e => {
+                console.log('Negociação incluída com sucesso!');
+            }
+
+            request.onerror = e => {
+                console.log('Não foi possível incluir a negociação');
+            }
+        }
+
+        adiciona();
+
+    </script>
+</body>
+</html>
