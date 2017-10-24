@@ -12,7 +12,7 @@
         var connection;
         // Abrindo a conexão com o banco
         //
-        var openRequest = window.indexedDB.open('aluraframe', 1);
+        var openRequest = window.indexedDB.open('aluraframe', 2);
 
         // Tríade que deve ser tratada no indexedDB
         //
@@ -22,7 +22,18 @@
             // Cria um object store, uma entidade que guarda coleções de objetos, como uma tabela
             //
             let minhaConnection = e.target.result;
-            minhaConnection.createObjectStore('negociacoes');
+
+            // Caso exista uma object store com o nome negociacoes, vamos destruí-la
+            //
+            if(minhaConnection.objectStoreNames.contains('negociacoes')) {
+                minhaConnection.deleteObjectStore('negociacoes');
+            }
+
+            // Vamos criar uma object store com as negociacoes e adicionar auto-increment
+            // não é possível atualizar uma object store com nova estrutura. Devemos
+            // destruí-la primeiro e reconstruí-la com nova estrutura.
+            //
+            minhaConnection.createObjectStore('negociacoes', {autoIncrement: true});
         };
 
         openRequest.onsuccess = e => {
@@ -60,9 +71,6 @@
                 console.log('Não foi possível incluir a negociação');
             }
         }
-
-        adiciona();
-
     </script>
 </body>
 </html>
