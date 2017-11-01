@@ -4,7 +4,10 @@ angular.module('alurapic').controller('GruposController', function($scope, $http
     $http.get('/v1/grupos')
         .then(function(response) {
             $scope.grupos = response.data;
-        }, function(){
-
+            console.log(response);
+        }, function(erro){
+            console.log(erro);
+        }, function(value) {
+            console.log(value);
         });
 });

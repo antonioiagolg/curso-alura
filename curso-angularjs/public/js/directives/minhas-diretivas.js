@@ -72,8 +72,7 @@ angular.module('minhasDiretivas',[])
             $http.get('/v1/grupos')
                 .then(function(response) {
                     $scope.grupos = response.data;
-                }, function(){
-        
+                }, function(erro){
                 });
         };
 
