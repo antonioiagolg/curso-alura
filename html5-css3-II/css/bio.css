@@ -28,3 +28,24 @@
     box-shadow: 0 0 0 9999px rgba(0,0,0,.8);
     transform: rotate(-5deg) scale(1.2);
 }
+
+.container > p::first-letter {
+    font-size: 2em;
+    color: #3c1d3d;
+    text-shadow: 1px 1px black;
+    font-weight: bold;
+    margin-right: .2ch;
+    line-height: 1;
+}
+
+.citacao-bio::before {
+    font-size: 10em;
+    content: '"';
+    position: absolute;
+    color: #bbb;
+    line-height: .8;
+}
+
+.citacao-bio p {
+    position: relative;
+}
