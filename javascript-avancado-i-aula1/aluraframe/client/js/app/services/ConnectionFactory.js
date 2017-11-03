@@ -1,5 +1,6 @@
 
 /**
+ * 
  * Module pattern, isolando as variáveis do escopo global, colocando elas
  * no escopo da função anônima
  *
