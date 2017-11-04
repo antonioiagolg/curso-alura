@@ -22,4 +22,15 @@ class Negociacao {
     get volume() { 
         return this._quantidade * this._valor;
     }
+
+    /**
+     * Verifica se a negociação é igual à passada por parâmetro
+     * 
+     * @param  {Negociacao}  outraNegociacao A negociação a ser comparada.
+     * @return {Boolean}                 Se são iguais ou não
+     * 
+     */
+    isEquals(outraNegociacao) {
+        return JSON.stringify(this) == JSON.stringify(outraNegociacao);
+    }
 }
