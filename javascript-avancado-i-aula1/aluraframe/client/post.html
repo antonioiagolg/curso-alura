@@ -12,7 +12,7 @@
 
         <div class="form-group">
             <label for="data">Data</label>
-            <input type="date" id="data" class="form-control" required autofocus/>        
+            <input type="text" id="data" class="form-control" required autofocus/>        
         </div>    
 
         <div class="form-group">
@@ -42,19 +42,19 @@
 
             let dados = {
                 data: DataHelper.textoParaData(dataForm.value),
-                qunatidade: quantidadeForm.value,
+                quantidade: quantidadeForm.value,
                 valor: valorForm.value
             };
 
             new HttpService()
                 .post('/negociacoes', dados)
                 .then(() => {
-                    inputData.value = '';
-                    inputQuantidade.value = 1;
-                    inputValor.value = 0.0;
-                    inputData.focus();
+                    dataForm.value = '';
+                    quantidadeForm.value = 1;
+                    valorForm.value = 0.0;
+                    dataForm.focus();
                     alert('Negociação enviada com sucesso');
-                }).cath(erro => alert(`Não foi possível enviar a negociação: ${erro}`));
+                }).catch(erro => alert(`Não foi possível enviar a negociação: ${erro}`));
 
         }
     </script>
