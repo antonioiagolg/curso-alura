@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Portfolio - João da Silva</title>
+    <link rel="icon" href="imagens/favicon.png">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/site.css">
+    <link rel="stylesheet" href="css/contato.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700">
+</head>
+<body>
+    <main>
+        <h1 class="titulo-principal">Portfolio</h1>
+        <div class="container">
+            <form>
+                <fieldset>
+                    <legend class="legenda-titulo">Dados pessoais</legend>
+                    <label for="nome" class="rotulo">Nome:</label>
+                    <input type="text" class="campo campo-cheio" name="nome" id="nome" placeholder="Digite seu nome aqui" pattern="[A-Za-z ']{4,}" title="Adicione pelo menos 4 letras" required autofocus/>
+                    <label for="email" class="rotulo">Email:</label>
+                    <input type="email" class="campo campo-cheio" name="e-mail" id="email" placeholder="seuemail@example.com" required/>
+                </fieldset>
+
+                <fieldset>
+                    <legend class="legenda-titulo">Assunto</legend>
+
+                    <input type="radio" name="assunto" id="consultoria" value="consultoria"/>
+                    <label for="consultoria">Consultoria</label>
+                    <input type="radio" name="assunto" id="blog" value="blog"/>
+                    <label for="blog">Blog</label>
+
+                    <fieldset>
+                        <input type="radio" name="assunto" id="outro" value="outro"/>
+                        <label for="outro">Outro</label>
+                        <input type="text" class="campo outro" placeholder="Digite aqui outros assuntos">
+                    </fieldset>
+
+                    <label for="mensagem" class="legenda-titulo rotulo">Mensagem</label>
+                    <textarea name="mensagem" class="campo campo-cheio" id="mensagem" cols="30" rows="10" placeholder="Digite aqui sua mensagem"></textarea>
+                    <button type="submit" class="botao-enviar texto-formulario">Enviar <strong>mensagem</strong></button>
+                </fieldset>
+            </form>
+        </div>
+    </main>
+    <img src="imagens/eu.jpg" alt="Minha foto" class="minha-foto">
+    <aside class="navegacao-site">
+        <h1>João da Silva</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="bio.html">Sobre mim</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+        <ul class="icones-redes-sociais">
+            <li>
+                <a href="https://github.com/joaodasilva" class="github">
+                    Github
+                </a>
+            </li>
+            <li>
+                <a href="https://twitter.com/joaodasilva" class="twitter">
+                    Twitter
+                </a>
+            </li>
+            <li>
+                <a href="https://br.linkedin.com/pub/joão-da-silva/32/4/508" class="linkedin">
+                    LinkedIn
+                </a>
+            </li>
+        </ul>
+    </aside>
+    <footer class="rodape-pagina">
+        &copy; João da Silva 2014
+    </footer>
+</body>
+</html>
