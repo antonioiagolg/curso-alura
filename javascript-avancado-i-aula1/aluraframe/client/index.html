@@ -11,7 +11,7 @@
     
     <h1 class="text-center">Negociações</h1>
     <div id="mensagem-view"></div>
-    <form class="form" onsubmit="negociacaoController.adiciona(event)">
+    <form class="form">
         
         <div class="form-group">
             <label for="data">Data</label>
@@ -32,29 +32,20 @@
     </form>
     
     <div class="text-center">
-        <button onclick="negociacaoController.apaga()" class="btn btn-primary text-center" type="button">
+        <button class="btn btn-primary text-center" type="button">
             Apagar
         </button>
     </div> 
     <br>
     <br>
     <div id="tabela-negociacoes"></div>
-    <script src="js/app/polyfill/fetch.js"></script>
-    <script src="js/app/models/Negociacao.js"></script>
-    <script src="js/app/services/NegociacaoService.js"></script>
-    <script src="js/app/controllers/NegociacaoController.js"></script>
-    <script src="js/app/helpers/DataHelper.js"></script>
-    <script src="js/app/models/ListaNegociacoes.js"></script>
-    <script src="js/app/models/Mensagem.js"></script>
-    <script src="js/app/views/View.js"></script>
-    <script src="js/app/views/NegociacoesView.js"></script>
-    <script src="js/app/views/MensagemView.js"></script>
-    <script src="js/app/polyfill/es6.js"></script>
-    <script src="js/app/services/ProxyFactory.js"></script>
-    <script src="js/app/services/HttpService.js"></script>
-    <script src="js/app/helpers/Bind.js"></script>
-    <script src="js/app/services/ConnectionFactory.js"></script>
-    <script src="js/app/dao/NegociacaoDao.js"></script>
-    <script> var negociacaoController = new NegociacaoController();</script>
+    <script src="node_modules/systemjs/dist/system.js"></script>
+    <script>
+        // Indicando ao loader qual o primeiro script que deve ser carregado
+        System.defaultJSExtensions = true;
+        System.import('js/app/boot').catch(function(err) {
+            console.error(err);
+        });
+    </script>
 </body>
 </html>
