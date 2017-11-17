@@ -49,3 +49,34 @@
 .citacao-bio p {
     position: relative;
 }
+
+.habilidades th {
+    background-color: #851944;
+    color: white;
+    font-weight: bold;
+}
+
+.habilidades thead th {
+    background-color: #3C1D3D;
+}
+
+.habilidades td {
+    background-color: #EEE;
+}
+
+.habilidades th,
+.habilidades td {
+    padding: 1em;
+}
+
+.habilidades {
+    border-collapse: separate;
+    border-spacing: .25em;
+    margin: 1em 0;
+}
+
+.estudando {
+    vertical-align: middle;
+    text-align: center;
+    font-style: italic;
+}
