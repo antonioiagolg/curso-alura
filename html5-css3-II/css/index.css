@@ -27,6 +27,27 @@
             transform: rotate(-5deg) skew(-10deg);
     display: inline-block;
 }
+.saudacao em {
+    animation: flutua 1s infinite;
+    -webkit-animation: flutua 1s infinite;
+    position: relative;
+    animation-direction: alternate;
+    -webkit-animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
+}
+.saudacao:hover em {
+    animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+}
+@keyframes flutua {
+    from {
+        top: -5px;
+    }
+    to {
+        top: 5px;
+    }
+}
 .botao-index {
     font-size: 1.25em;
     background-color: #851944;
@@ -37,7 +58,17 @@
     margin: 2em auto;
     display: block;
     text-align: center;
+    text-decoration: none;
+    transition: .5s;
 }
+
+.botao-index:hover,
+.botao-index:focus {
+    background-color: #C54974;
+    color: white;
+    box-shadow: 0 0 1em #FA9;
+}
+
 .secao-inicio {
     padding: 2em;
 }
@@ -132,6 +163,23 @@ body {
     font-size: 400%;
     color: #D5447E;
     position: absolute;
+}
+.palavra-home {
+    -webkit-animation: aparece 2s;
+    animation: aparece 2s;
+}
+
+@-webkit-keyframes aparece {
+    0% {
+        opacity: 0;
+        transform: scale(0.001);
+    }
+}
+@keyframes aparece {
+    0% {
+        opacity: 0;
+        transform: scale(0.001);
+    }
 }
 .eficiencia {
     top: 50%;
@@ -243,6 +291,14 @@ body {
 
     font-size: 1.2em;
     font-family: "Open Sans Condensed", sans-serif;
+}
+.banner-twitter {
+    -webkit-animation: aparece 0.5s;
+    animation: aparece 0.5s;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+    animation-fill-mode: backwards;
+    -webkit-animation-fill-mode: backwards;
 }
 .blog .inicio-post {
     position: absolute;
