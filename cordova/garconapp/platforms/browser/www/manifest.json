@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "Graçonete Só de Cenoura",
+  "short_name": "Graçonete Só de Cenoura",
+  "version": "br.com.iagogaspar.garconapp",
+  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "author": "Antonio Iago Lemos Gaspar",
+  "icons": [],
+  "start_url": "index.html"
+}
